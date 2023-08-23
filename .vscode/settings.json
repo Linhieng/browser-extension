@@ -1,0 +1,16 @@
+{
+    "emeraldwalk.runonsave": {
+        "autoClearConsole": true,
+        "commands": [
+            {
+                "match": "\\.scss$",
+                "cmd": "md \"${workspaceRoot}\\css\" & sass \"${file}\" > \"${workspaceRoot}\\css\\${fileBasenameNoExt}.css\""
+            },
+        ]
+    },
+    "[javascript]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnPaste": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
+}
