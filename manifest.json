@@ -6,13 +6,13 @@
     "author": "Linehing",
     "content_scripts": [
         {
-            "matches": [ "https://juejin.cn/pins"],
-            "css": [ "css/juejin-pins.css" ]
+            "matches": ["https://juejin.cn/pins"],
+            "css": ["css/juejin-pins.css"]
         },
         {
-            "matches": [ "https://juejin.cn/creator/home"],
+            "matches": ["https://juejin.cn/creator/home"],
             "css": ["css/juejin-home.css"],
-            "js": [ "js/juejin-home.js" ]
+            "js": ["js/juejin-home.js"]
         }
     ]
 }

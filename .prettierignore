@@ -1,0 +1,4 @@
+package-lock.json
+**/*.css
+**/*.scss
+**/*.md
