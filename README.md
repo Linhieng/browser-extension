@@ -7,4 +7,4 @@
 
 发现的问题：
 
-- [ ] 从首页进入 home 页时不会触发 `js\juejin-home.js` 脚本，需要重新刷新。
+- [x] 从首页进入 home 页时不会触发 `js\juejin-home.js` 脚本，需要重新刷新。
