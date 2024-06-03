@@ -6,7 +6,7 @@
     "author": "Linehing",
     "content_scripts": [
         {
-            "matches": ["https://juejin.cn/pins"],
+            "matches": ["https://juejin.cn/pins*"],
             "css": ["css/juejin-pins.css"]
         },
         {
