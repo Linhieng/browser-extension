@@ -1,0 +1,18 @@
+{
+    "name": "github 获取用户所有仓库路径",
+    "version": "0.0.1",
+    "manifest_version": 3,
+    "author": "linhieng",
+    "action": {
+        "default_popup": "popup/popup.html",
+        "default_title": "鼠标悬浮时会显示我"
+    },
+    "permissions": ["tabs", "storage"],
+    "content_scripts": [
+        {
+            "matches": ["https://github.com/Linhieng*"],
+            "css": ["fetch-all-repo/style.css"],
+            "js": ["fetch-all-repo/script.js"]
+        }
+    ]
+}
