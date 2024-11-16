@@ -1,0 +1,19 @@
+#content_views pre,
+#content_views pre code {
+  -webkit-touch-callout: auto !important;
+  -webkit-user-select: auto !important;
+  -khtml-user-select: auto !important;
+  -moz-user-select: auto !important;
+  -ms-user-select: auto !important;
+  user-select: auto !important;
+}
+
+/* 功能三：隐藏登陆弹窗 */
+.passport-login-container {
+  display:none !important;
+}
+
+/* 关注博主才能查看文章，开放文章 */
+#article_content{
+  height: auto !important;
+}

@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "CSDN插件",
+  "version": "1.0",
+  "description": "",
+  "author": "openHacking, linhieng",
+  "permissions": [
+    "storage"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://blog.csdn.net/*"],
+      "js": ["content-script.js", "remove-ad.js"],
+      "css": ["custom.css"],
+      "run_at": "document_end"
+    }
+  ]
+}
