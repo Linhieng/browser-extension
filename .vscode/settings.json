@@ -1,18 +1,18 @@
 {
-    "emeraldwalk.runonsave": {
-        "autoClearConsole": true,
-        "commands": [
-            {
-                "match": "\\.scss$",
-                "cmd": "md \"${workspaceRoot}\\css\" & sass \"${file}\" > \"${workspaceRoot}\\css\\${fileBasenameNoExt}.css\""
-            }
-        ]
-    },
-    "[javascript][json][jsonc]": {
-        "editor.tabSize": 4,
-        "editor.detectIndentation": false,
-        "editor.formatOnSave": true,
-        "editor.formatOnPaste": true,
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }
+	"emeraldwalk.runonsave": {
+		"autoClearConsole": true,
+		"commands": [
+			{
+				"match": "\\.scss$",
+				"cmd": "md \"${workspaceRoot}\\css\" & sass \"${file}\" > \"${workspaceRoot}\\css\\${fileBasenameNoExt}.css\""
+			}
+		]
+	},
+	"[javascript][json][jsonc]": {
+		"editor.tabSize": 4,
+		"editor.detectIndentation": false,
+		// "editor.formatOnSave": true,
+		"editor.formatOnPaste": true,
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	}
 }
