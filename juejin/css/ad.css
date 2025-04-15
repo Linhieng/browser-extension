@@ -1,0 +1,19 @@
+.top-banners-container,
+.main-area.article-area>article>img {
+	display: none !important;
+}
+
+.view-container .with-global-banner .index-nav-before,
+.view-container .with-global-banner .team-content .list-header.sticky,
+.view-container .with-global-banner .user-view .list-header.sticky,
+.view-container .with-global-banner .view-nav {
+	top: 5rem !important;
+}
+
+.header-with-banner,
+.view-container .with-global-banner .index-nav-before.top,
+.view-container .with-global-banner .team-content .list-header.sticky.top,
+.view-container .with-global-banner .user-view .list-header.sticky.top,
+.view-container .with-global-banner .view-nav.top {
+	top: 0 !important;
+}

@@ -1,10 +1,14 @@
 {
-    "name": "linhieng 的掘金浏览器插件",
+    "name": "掘金",
     "version": "1.0.0",
     "manifest_version": 3,
 
     "author": "Linehing",
     "content_scripts": [
+        {
+            "matches": ["https://juejin.cn/*"],
+            "css": ["css/ad.css"]
+        },
         {
             "matches": ["https://juejin.cn/pins*"],
             "css": ["css/juejin-pins.css"]
