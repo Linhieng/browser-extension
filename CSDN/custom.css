@@ -1,0 +1,53 @@
+
+/* 隐藏登录提示 */
+.passport-login-tip-container { display: none !important; }
+/* 一刀切，直接不显示无用内容 */
+#rightAside, #toolbarBox, .blog_container_aside, .csdn-side-toolbar, .toolbox-middle, .btn-code-notes  { display: none !important; }
+#mainBox{
+  display:flex;
+  justify-content: center;
+  margin: 0 !important;
+}
+
+
+/* “复制”按钮样式添加了 !important，覆盖不了，直接换个样式名重新写样式 */
+.my-button::after{
+  content: attr(data-title);
+  line-height: 26px;
+  font-weight: bold;
+  color: #ffffff;
+}
+.my-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 67px;
+  height: 26px;
+
+  background-color: #9999AA;
+  text-align: center;
+  z-index: 20;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+#content_views pre,
+#content_views pre code {
+  -webkit-touch-callout: auto !important;
+  -webkit-user-select: auto !important;
+  -khtml-user-select: auto !important;
+  -moz-user-select: auto !important;
+  -ms-user-select: auto !important;
+  user-select: auto !important;
+}
+
+/* 功能三：隐藏登陆弹窗 */
+.passport-login-container {
+  display:none !important;
+}
+
+/* 关注博主才能查看文章，开放文章 */
+#article_content{
+  height: auto !important;
+}
