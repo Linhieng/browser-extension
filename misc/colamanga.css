@@ -1,0 +1,10 @@
+#HMimageleft,
+#HMimageright,
+#HMrichA ~ a,
+#HMrichA ~ img,
+#HMrichA,
+#hbidbox{
+    display: none !important;
+    opacity: 0;
+}
+
