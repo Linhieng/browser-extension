@@ -1,123 +1,68 @@
-﻿(function () {
-  /*
-   *  DOM selector
-   *  @param selector {String} css selector for element
-   *  @param context {Element} root element
-   *  usage: $$('body')
-   *  result: You will get <body> element
-   */
-  function $$(selector, context) {
-    context = context || document;
-    var elements = context.querySelectorAll(selector);
-    return elements.length == 1
-      ? Array.prototype.slice.call(elements)[0]
-      : Array.prototype.slice.call(elements);
-  }
+﻿// 核心原理就是为“复制”按钮重新绑定点击事件，新的事件函数自己写，功能就是复制代码内容
 
-  /**
-   *
-   * copy text to clipboard
-   * https://stackoverflow.com/questions/3436102/copy-to-clipboard-in-chrome-extension/12693636#12693636
-   *
-   * @param str
-   * @param mimeType  'Text'
-   */
-  function copy(str) {
-    navigator.clipboard.writeText(str);
-  }
+function $$(selector, context) {
+	context = context || document
+	var elements = context.querySelectorAll(selector)
+	return elements.length == 1
+		? Array.prototype.slice.call(elements)[0]
+		: Array.prototype.slice.call(elements)
+}
 
-  function addCSS(styles) {
-    let styleSheet = document.createElement("style")
-    styleSheet.innerText = styles
-    document.head.appendChild(styleSheet)
-  }
+function copy(str) {
+	navigator.clipboard.writeText(str)
+}
 
-  // 内容区开启复制
-  content_views = document.querySelector("#content_views")
-  content_views.replaceWith(content_views.cloneNode(true));
+function addCSS(styles) {
+	let styleSheet = document.createElement("style")
+	styleSheet.innerText = styles
+	document.head.appendChild(styleSheet)
+}
 
-  // 功能一： 修改复制按钮，支持一键复制
-  const buttons = Array.isArray($$(".hljs-button"))
-    ? $$(".hljs-button")
-    : [$$(".hljs-button")];
+// // 内容区开启复制
+// content_views = document.querySelector("#content_views");
+// content_views.replaceWith(content_views.cloneNode(true));
 
-  buttons.forEach((btn) => {
-    // 更改标题
-    btn.dataset.title = "复制";
+// 功能一： 修改复制按钮，支持一键复制
+const buttons = Array.isArray($$(".hljs-button"))
+	? $$(".hljs-button")
+	: [$$(".hljs-button")];
 
-    // 移除点击事件
-    btn.setAttribute("onclick", "");
+buttons.forEach((btn) => {
+	// “复制”按钮样式添加了 !important，覆盖不了，直接换个样式名重新写样式
+	btn.classList.replace('hljs-button', 'my-button')
 
-    // 克隆按钮
-    elClone = btn.cloneNode(true);
+	// 更改标题
+	btn.dataset.title = "复制"
 
-    // 替回按钮
-    btn.parentNode.replaceChild(elClone, btn);
+	// 移除点击事件
+	btn.setAttribute("onclick", "")
 
-    // 重新添加点击事件
-    elClone.addEventListener("click", (e) => {
-      // 实现复制
-      const parentPreBlock = e.target.closest("pre");
-      const codeBlock = $$("code", parentPreBlock);
-      copy(codeBlock.innerText);
+	// 克隆按钮
+	elClone = btn.cloneNode(true)
 
-      e.target.dataset.title = "复制成功";
-      setTimeout(() => {
-        e.target.dataset.title = "复制";
-      }, 1000);
-      e.stopPropagation();
-      e.preventDefault();
-    });
-  });
+	// 替回按钮
+	btn.parentNode.replaceChild(elClone, btn)
 
-  // 功能二：解除 关注博主即可阅读全文的提示，
-  let readMore = document.querySelector('.btn-readmore')
-  let style = `
-  .hide-article-box{
-    z-index: -1 !important;
-  }
-  `
+	// 重新添加点击事件
+	elClone.addEventListener("click", (e) => {
+		// 实现复制
+		const parentPreBlock = e.target.closest("pre")
+		const codeBlock = $$("code", parentPreBlock)
+		copy(codeBlock.innerText)
 
-  if (readMore) {
-    addCSS(style)
-  }
+		e.target.dataset.title = "复制成功"
+		setTimeout(() => {
+			e.target.dataset.title = "复制"
+		}, 1000)
+		e.stopPropagation()
+		e.preventDefault()
+	})
+})
 
-  // 判定是否需要展开代码块
-  listenerChange()
+// 功能二：解除 关注博主即可阅读全文的提示，
+let readMore = document.querySelector(".btn-readmore")
+let style = ` .hide-article-box{ z-index: -1 !important; } `
 
-  // 自动展开代码块
-  function openPre() {
-    const pres = Array.from(document.querySelectorAll('main div.blog-content-box pre.set-code-hide'))
-    const presBox = Array.from(document.querySelectorAll('.hide-preCode-box'))
-
-    pres.forEach((pre) => {
-      pre.style.height = 'unset'
-      pre.style.maxHeight = 'unset'
-    })
-    presBox.forEach((box) => {
-      box.style.display = 'none'
-    })
-  }
-
-  function listenerChange() {
-    // chrome.storage.onChanged.addListener((changes, namespace) => {
-    //   for (let [key, { oldValue, newValue }] of Object.entries(changes)) {
-    //     console.log(
-    //       `Storage key "${key}" in namespace "${namespace}" changed.`,
-    //       `Old value was "${oldValue}", new value is "${newValue}".`
-    //     );
-    //     if (key === 'autoOpenCodeCheck') {
-    //     }
-    //   }
-    // });
-
-    chrome.storage.sync.get(['autoOpenCodeCheck']).then((result) => {
-      const check =
-        result.autoOpenCodeCheck === undefined ? true : result.autoOpenCodeCheck;
-
-      if (check) {
-        openPre()
-      }
-    });
-  }
-})();
+if (readMore) {
+	addCSS(style)
+}
