@@ -1,22 +1,26 @@
 renderElementToPage()
 
-// 监听浏览器前进回退
-window.addEventListener('popstate', (evt) => {
-    console.log(evt)
-    console.log('你好？');
-    renderElementToPage()
-}, false)
+// 监听 SPA 网页的变化，使用监听元素的方式最合适。
+const observer = new MutationObserver(() => {
+	console.log('DOM ID "juejin" 发生变化');
+	renderElementToPage()
+});
+observer.observe(window.juejin, { childList: true });
 
 function renderElementToPage() {
-    if (!(
-        location.origin === 'https://juejin.cn' && location.pathname === '/creator/home'
-    )) {
+    if (!/https:\/\/juejin.cn\/creator\/home.*/.test(window.location.href)) {
         return
     }
+
+	if (window.linhiengElement) {
+		return
+	}
+
 
     const eleTopUl = document.querySelector(".nav-list .right-side-nav");
 
     const eleGotoPin = document.createElement("li");
+	eleGotoPin.id = "linhiengElement"
     eleGotoPin.classList.add("nav-item", "linhieng");
     eleGotoPin.innerHTML = ` <a target="_blank" href="https://juejin.cn/pins">发沸点</a> `;
 
