@@ -1,5 +1,5 @@
 {
-    "name": "自用插件",
+    "name": "AAA自用插件",
     "version": "0.1.0",
     "description": "详见 README.md",
     "manifest_version": 3,
@@ -39,7 +39,15 @@
         {
             "matches": [ "https://www.twmanga.com/*" ],
             "css": [ "misc/twmanga.css" ]
-        }
-
+        },
+        {
+			"matches": [ "https://www.google.com/search*" ],
+            "css": [ "misc/google.css" ],
+            "run_at": "document_end"
+		},
+        {
+			"matches": [ "https://www.reddit.com/*" ],
+			"css": [ "misc/reddit.css" ]
+		}
     ]
 }
