@@ -8,7 +8,8 @@
         {
             "matches": ["https://juejin.cn/*"],
 			"css": ["css/ad.css", "css/juejin-home.css"],
-            "js": ["js/juejin-home.js"]
+            "js": ["js/juejin-home.js"],
+            "run_at": "document_end"
         },
         {
             "matches": ["https://juejin.cn/pins*"],

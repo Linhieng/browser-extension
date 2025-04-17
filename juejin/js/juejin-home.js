@@ -34,3 +34,23 @@ function renderElementToPage() {
 
     eleTopUl.prepend(eleGotoDraft, eleGotoCode, eleGotoPin);
 }
+
+const times = setInterval(() => {
+    closeBannerAd()
+}, 100)
+setTimeout(() => {
+    clearTimeout(times)
+    console.log('10秒后无论如何都关闭广告');
+}, 1000 * 10);
+function closeBannerAd() {
+    const btn1 = document.querySelector('.top-banners-container .slide-logo img')
+    btn1 && btn1.click()
+    const btn2 = document.querySelector('.top-banners-container  img.global-banner-close')
+    btn2 && btn2.click()
+    if (btn1 && btn2) {
+        clearTimeout(times)
+        console.log('关闭广告成功');
+    } else {
+        console.log('检测不到');
+    }
+}
