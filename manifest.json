@@ -39,6 +39,10 @@
         {
             "matches": [ "https://www.twmanga.com/*" ],
             "css": [ "misc/twmanga.css" ]
+        },
+        {
+            "matches": [ "https://www.rumanhua.com/*" ],
+            "css": [ "misc/rumanhua.css" ]
         }
 
     ]
