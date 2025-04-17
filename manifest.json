@@ -26,6 +26,11 @@
             "js": ["CSDN/csdn.js"],
             "css": ["CSDN/csdn.css"],
             "run_at": "document_end"
+        },
+        {
+            "matches": ["https://github.com/Linhieng*"],
+            "css": ["github/github.css"],
+            "js": ["github/github.js"]
         }
 
     ]
