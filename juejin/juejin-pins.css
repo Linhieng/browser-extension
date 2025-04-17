@@ -1,3 +1,4 @@
+/* 沸点输入框自适应高度 */
 div#juejin div.editor-content.editor {
   max-height: max-content;
   overflow-y: auto;
