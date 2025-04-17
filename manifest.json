@@ -9,6 +9,7 @@
     },
 
     "author": "Linehing",
+    "permissions": [ "storage" ],
     "content_scripts": [
         {
             "matches": ["https://juejin.cn/*"],
@@ -19,8 +20,13 @@
         {
             "matches": ["https://juejin.cn/pins*"],
             "css": ["juejin/juejin-pins.css"]
+        },
+        {
+            "matches": ["https://*.blog.csdn.net/*"],
+            "js": ["CSDN/csdn.js"],
+            "css": ["CSDN/csdn.css"],
+            "run_at": "document_end"
         }
-
 
     ]
 }
