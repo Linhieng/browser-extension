@@ -1,0 +1,8 @@
+.view-body, .b-boxs {
+    width: auto !important;
+}
+.footer-right {
+    transform: scale(0.5) !important;
+    bottom: -95px !important;
+    right: -5px !important;
+}
