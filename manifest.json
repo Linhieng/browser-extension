@@ -9,7 +9,7 @@
     },
 
     "author": "Linehing",
-    "permissions": [ "storage" ],
+    "permissions": [ "tabs", "storage" ],
     "content_scripts": [
         {
             "matches": ["https://juejin.cn/*"],
@@ -31,6 +31,14 @@
             "matches": ["https://github.com/Linhieng*"],
             "css": ["github/github.css"],
             "js": ["github/github.js"]
+        },
+        {
+            "matches": [ "https://www.colamanga.com/*" ],
+            "css": [ "misc/colamanga.css" ]
+        },
+        {
+            "matches": [ "https://www.twmanga.com/*" ],
+            "css": [ "misc/twmanga.css" ]
         }
 
     ]
