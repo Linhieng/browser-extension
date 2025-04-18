@@ -1,0 +1,21 @@
+
+/* 为首页番剧表中的每项添加分隔符 */
+#btm > div.main > div > div > table > tbody > tr > td > a[class^="bgm_score"] {
+	margin: 0 !important;
+    padding: 0 10px 0 7px !important;
+    border-right: 2px solid !important;
+}
+
+/* 季度番剧表修改样式以确保名称显示完整 */
+#bgm-table dl {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+#bgm-table dt { flex-basis: 100%; }
+#bgm-table dd {
+	margin: 10px !important;
+	line-height: 16px !important;
+	word-break:unset !important;
+	white-space:unset !important;
+}

@@ -2,7 +2,8 @@
 /* 隐藏登录提示 */
 .passport-login-tip-container { display: none !important; }
 /* 一刀切，直接不显示无用内容 */
-#rightAside, #toolbarBox, .blog_container_aside, .csdn-side-toolbar, .toolbox-middle, .btn-code-notes  { display: none !important; }
+#rightAside, #toolbarBox, .blog_container_aside, .csdn-side-toolbar, .toolbox-middle, .btn-code-notes,
+main [id^="dmp_ad_"]  { display: none !important; }
 #mainBox{
   display:flex;
   justify-content: center;

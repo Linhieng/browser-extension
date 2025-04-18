@@ -1,0 +1,62 @@
+{
+    "name": "AAA自用插件",
+    "version": "0.1.0",
+    "description": "详见 README.md",
+    "manifest_version": 3,
+    "icons": {
+        "128": "icons/icon128.png",
+        "256": "icons/icon256.png"
+    },
+
+    "author": "Linehing",
+    "permissions": [ "tabs", "storage" ],
+    "content_scripts": [
+        {
+            "matches": ["https://juejin.cn/*"],
+			"css": ["juejin/juejin.css"],
+            "js": ["juejin/juejin.js"],
+            "run_at": "document_end"
+        },
+        {
+            "matches": ["https://juejin.cn/pins*"],
+            "css": ["juejin/juejin-pins.css"]
+        },
+        {
+            "matches": ["https://*.blog.csdn.net/*"],
+            "js": ["CSDN/csdn.js"],
+            "css": ["CSDN/csdn.css"],
+            "run_at": "document_end"
+        },
+        {
+            "matches": ["https://github.com/Linhieng*"],
+            "css": ["github/github.css"],
+            "js": ["github/github.js"]
+        },
+        {
+            "matches": [ "https://www.colamanga.com/*" ],
+            "css": [ "misc/colamanga.css" ]
+        },
+        {
+            "matches": [ "https://www.twmanga.com/*" ],
+            "css": [ "misc/twmanga.css" ]
+        },
+        {
+			"matches": [ "https://www.google.com/search*" ],
+            "css": [ "misc/google.css" ],
+            "run_at": "document_end"
+		},
+        {
+			"matches": [ "https://www.reddit.com/*" ],
+			"css": [ "misc/reddit.css" ]
+		},
+		{
+			"matches": [ "https://www.kisssub.org/*" ],
+			"css": [ "kisssub/kisssub.css" ]
+		},
+        {
+            "matches": [ "https://www.rumanhua.com/*" ],
+            "css": [ "misc/rumanhua.css" ]
+        }
+
+    ]
+}
