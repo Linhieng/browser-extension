@@ -48,6 +48,10 @@
         {
 			"matches": [ "https://www.reddit.com/*" ],
 			"css": [ "misc/reddit.css" ]
+		},
+		{
+			"matches": [ "https://www.kisssub.org/*" ],
+			"css": [ "kisssub/kisssub.css" ]
 		}
     ]
 }
