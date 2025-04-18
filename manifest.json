@@ -52,6 +52,11 @@
 		{
 			"matches": [ "https://www.kisssub.org/*" ],
 			"css": [ "kisssub/kisssub.css" ]
-		}
+		},
+        {
+            "matches": [ "https://www.rumanhua.com/*" ],
+            "css": [ "misc/rumanhua.css" ]
+        }
+
     ]
 }
