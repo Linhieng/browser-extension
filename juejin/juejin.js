@@ -32,7 +32,13 @@ function renderElementToPage() {
     eleGotoDraft.classList.add("nav-item", "linhieng");
     eleGotoDraft.innerHTML = ` <a target="_blank" href="https://juejin.cn/editor/drafts/7269743983189786660">文章草稿</a> `;
 
-    eleTopUl.prepend(eleGotoDraft, eleGotoCode, eleGotoPin);
+    try {
+        // 首次执行时，eleTopUI 没有子元素，会报错 HierarchyRequestError。
+        // 这就算了，问题是报错后掘金直接不渲染了。
+        // 还不行，由于修改了网页结构，导致掘金自己的代码也出现了 HierarchyRequestError 报错。
+        // TODO
+        // eleTopUl.prepend(eleGotoDraft, eleGotoCode, eleGotoPin);
+    } catch (error) { }
 }
 
 const times = setInterval(() => {
