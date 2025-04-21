@@ -56,6 +56,10 @@
         {
             "matches": [ "https://www.rumanhua.com/*" ],
             "css": [ "misc/rumanhua.css" ]
+        },
+        {
+            "matches": [ "https://www.xbgjw.com/*" ],
+            "css": [ "misc/xbgjw.css" ]
         }
 
     ]
